@@ -13,7 +13,10 @@
 
 #---------------------------------- Content ---------------------------------#
 
-#begin Player_spriteAtlas.png
+#begin playeratlas.xml
+/copy:playeratlas.xml
+
+#begin Sprites/gameAtlas.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -24,8 +27,18 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /processorParam:Version=3.8.6.0
-/build:Player_spriteAtlas.png
+/build:Sprites/gameAtlas.png
 
-#begin playeratlas.xml
-/copy:playeratlas.xml
+#begin Sprites/Player_spriteAtlas.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/processorParam:Version=3.8.6.0
+/build:Sprites/Player_spriteAtlas.png
 
