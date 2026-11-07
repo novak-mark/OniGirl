@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("OniGirl")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a8c836b115e30fd0534cfd1a4165e4472ca5bdbc")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e2c6f6456d7a5391d30f9d1002377cbada3414ae")]
 [assembly: System.Reflection.AssemblyProductAttribute("OniGirl")]
 [assembly: System.Reflection.AssemblyTitleAttribute("OniGirl")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

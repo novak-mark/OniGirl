@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>/home/yuki/Dokumenti/College/3 letnik/TINR/Projekt/OniGirl/OniGirl/Content/Player_spriteAtlas.png</SourceFile>
-  <SourceTime>2026-10-25T18:12:23.9950437+01:00</SourceTime>
-  <DestFile>/home/yuki/Dokumenti/College/3 letnik/TINR/Projekt/OniGirl/OniGirl/Content/bin/DesktopGL/Content/Player_spriteAtlas.xnb</DestFile>
-  <DestTime>2026-10-25T18:47:53.2426951+01:00</DestTime>
+  <SourceFile>/home/yuki/Dokumenti/College/3 letnik/TINR/Projekt/OniGirl/OniGirl/Content/Sprites/Player_spriteAtlas.png</SourceFile>
+  <SourceTime>2026-10-29T17:31:20.677654+01:00</SourceTime>
+  <DestFile>/home/yuki/Dokumenti/College/3 letnik/TINR/Projekt/OniGirl/OniGirl/Content/bin/DesktopGL/Content/Sprites/Player_spriteAtlas.xnb</DestFile>
+  <DestTime>2026-11-07T14:38:28.1267226+01:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2026-10-08T13:48:48+02:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

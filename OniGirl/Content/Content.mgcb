@@ -13,6 +13,9 @@
 
 #---------------------------------- Content ---------------------------------#
 
+#begin gameAtlas.xml
+/copy:gameAtlas.xml
+
 #begin playeratlas.xml
 /copy:playeratlas.xml
 

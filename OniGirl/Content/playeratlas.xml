@@ -1,7 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TextureAtlas>
-    <Texture>Player_spriteAtlas</Texture>
+    <Texture>Sprites/Player_spriteAtlas</Texture>
     <Regions>
-        
+        <Region name="playeridle" x="0"    y="0"   width="46"  height="55"/>
+        <Region name="playerwalk" x="128"  y="96"  width="45"  height="58"/>
+        <Region name="portrait"   x="1664" y="672" width="256" height="410" />
+
     </Regions>
 </TextureAtlas>

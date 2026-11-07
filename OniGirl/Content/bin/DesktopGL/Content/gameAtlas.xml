@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas>
+    <Texture>Sprites/gameAtlas</Texture>
+    <Regions>
+        <Region name="impidle" x="1596"    y="253"   width="81"  height="71"/>
+    
+
+    </Regions>
+</TextureAtlas>

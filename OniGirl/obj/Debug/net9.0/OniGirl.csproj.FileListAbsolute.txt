@@ -35,4 +35,7 @@
 /home/yuki/Dokumenti/College/3 letnik/TINR/Projekt/OniGirl/OniGirl/obj/Debug/net9.0/OniGirl.genruntimeconfig.cache
 /home/yuki/Dokumenti/College/3 letnik/TINR/Projekt/OniGirl/OniGirl/obj/Debug/net9.0/ref/OniGirl.dll
 /home/yuki/Dokumenti/College/3 letnik/TINR/Projekt/OniGirl/OniGirl/bin/Debug/net9.0/Content/playeratlas.xml
-/home/yuki/Dokumenti/College/3 letnik/TINR/Projekt/OniGirl/OniGirl/bin/Debug/net9.0/Content/Player_spriteAtlas.xnb
+/home/yuki/Dokumenti/College/3 letnik/TINR/Projekt/OniGirl/OniGirl/bin/Debug/net9.0/Content/Sprites/gameAtlas.xnb
+/home/yuki/Dokumenti/College/3 letnik/TINR/Projekt/OniGirl/OniGirl/bin/Debug/net9.0/Content/Sprites/Player_spriteAtlas.xnb
+/home/yuki/Dokumenti/College/3 letnik/TINR/Projekt/OniGirl/OniGirl/obj/Debug/net9.0/OniGirl.sourcelink.json
+/home/yuki/Dokumenti/College/3 letnik/TINR/Projekt/OniGirl/OniGirl/bin/Debug/net9.0/Content/gameAtlas.xml
