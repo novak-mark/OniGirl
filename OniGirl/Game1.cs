@@ -12,11 +12,17 @@ public class Game1 : Game
 
     private TextureAtlas playerAtlas;
     private TextureAtlas gameAtlas;
-
+    //Player regions
     private TextureRegion _playerIdle;
     private TextureRegion _playerportrait;
 
     private TextureRegion _impIdle;
+
+    private TextureRegion _heart;
+
+    private TileMap _tileMap;
+
+    private TileSet _tileSet;
 
     
 
@@ -46,12 +52,17 @@ public class Game1 : Game
         // TODO: use this.Content to load your game content here
         playerAtlas = TextureAtlas.ReadFromFile(Content, "Content/playeratlas.xml");
         gameAtlas = TextureAtlas.ReadFromFile(Content,"Content/gameAtlas.xml");
+        _tileMap = TileMap.ReadFromFile(Content,"Content/tilemap.xml");
+        _tileMap.scale = new Vector2(3.0f,3.0f);
+
+
 
 
         _playerIdle = playerAtlas.GetTextureRegion("playeridle");
         _playerportrait = playerAtlas.GetTextureRegion("portrait");
 
         _impIdle = gameAtlas.GetTextureRegion("impidle");
+        _heart = gameAtlas.GetTextureRegion("heart");
 
     }
 
@@ -71,6 +82,7 @@ public class Game1 : Game
 
         // TODO: Add your drawing code here
         _spriteBatch.Begin();
+        _tileMap.Draw(_spriteBatch);
         _playerIdle.Draw
         (
             _spriteBatch,
@@ -98,6 +110,41 @@ public class Game1 : Game
         (
             _spriteBatch,
             new Vector2(600,500),
+            Color.White,
+            0.0f,
+            Vector2.Zero,
+            Vector2.One,
+            SpriteEffects.None,
+            0.0f    
+        );
+
+        _heart.Draw
+        (
+            _spriteBatch,
+            new Vector2(200,100),
+            Color.White,
+            0.0f,
+            Vector2.Zero,
+            Vector2.One,
+            SpriteEffects.None,
+            0.0f    
+        );
+        _heart.Draw
+        (
+            _spriteBatch,
+            new Vector2(230,100),
+            Color.White,
+            0.0f,
+            Vector2.Zero,
+            Vector2.One,
+            SpriteEffects.None,
+            0.0f    
+        );
+
+        _heart.Draw
+        (
+            _spriteBatch,
+            new Vector2(260,100),
             Color.White,
             0.0f,
             Vector2.Zero,

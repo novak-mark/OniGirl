@@ -45,3 +45,6 @@
 /processorParam:Version=3.8.6.0
 /build:Sprites/Player_spriteAtlas.png
 
+#begin tilemap.xml
+/copy:tilemap.xml
+

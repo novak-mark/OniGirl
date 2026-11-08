@@ -3,13 +3,18 @@ using Microsoft.Xna.Framework.Graphics;
 
 public class TextureRegion
 {
-    Rectangle sourceRect;
-    Texture2D texture;
+    public Rectangle sourceRect;
+    public Texture2D texture;
+
+    public int textureWidth;
+    public int textureHeight;
 
 
     public TextureRegion(Texture2D texture, int x,int y, int width, int height)
     {
         this.texture = texture;
+        this.textureWidth = width;
+        this.textureHeight = height;
         sourceRect = new Rectangle(x,y,width,height);
     }
 
