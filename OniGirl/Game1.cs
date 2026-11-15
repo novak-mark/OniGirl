@@ -14,11 +14,15 @@ public class Game1 : Game
     private TextureAtlas gameAtlas;
     //Player regions
     private TextureRegion _playerIdle;
+
+    private AnimatedTexture idleAnimation;
     private TextureRegion _playerportrait;
 
     private TextureRegion _impIdle;
 
     private TextureRegion _heart;
+
+    
 
     private TileMap _tileMap;
 
@@ -59,6 +63,7 @@ public class Game1 : Game
 
 
         _playerIdle = playerAtlas.GetTextureRegion("playeridle");
+        idleAnimation = new AnimatedTexture(10,1,_playerIdle,10);
         _playerportrait = playerAtlas.GetTextureRegion("portrait");
 
         _impIdle = gameAtlas.GetTextureRegion("impidle");
@@ -72,7 +77,8 @@ public class Game1 : Game
             Exit();
 
         // TODO: Add your update logic here
-
+        float elapsed = (float) gameTime.ElapsedGameTime.TotalSeconds;
+        idleAnimation.UpdateFrame(elapsed);
         base.Update(gameTime);
     }
 
@@ -83,8 +89,11 @@ public class Game1 : Game
         // TODO: Add your drawing code here
         _spriteBatch.Begin();
         _tileMap.Draw(_spriteBatch);
-        _playerIdle.Draw
+
+
+        idleAnimation.DrawFrame
         (
+
             _spriteBatch,
             new Vector2(500,500),
             Color.White,
@@ -106,52 +115,9 @@ public class Game1 : Game
             0.0f    
         );
 
-        _impIdle.Draw
-        (
-            _spriteBatch,
-            new Vector2(600,500),
-            Color.White,
-            0.0f,
-            Vector2.Zero,
-            Vector2.One,
-            SpriteEffects.None,
-            0.0f    
-        );
+       
 
-        _heart.Draw
-        (
-            _spriteBatch,
-            new Vector2(200,100),
-            Color.White,
-            0.0f,
-            Vector2.Zero,
-            Vector2.One,
-            SpriteEffects.None,
-            0.0f    
-        );
-        _heart.Draw
-        (
-            _spriteBatch,
-            new Vector2(230,100),
-            Color.White,
-            0.0f,
-            Vector2.Zero,
-            Vector2.One,
-            SpriteEffects.None,
-            0.0f    
-        );
-
-        _heart.Draw
-        (
-            _spriteBatch,
-            new Vector2(260,100),
-            Color.White,
-            0.0f,
-            Vector2.Zero,
-            Vector2.One,
-            SpriteEffects.None,
-            0.0f    
-        );
+       
 
         _spriteBatch.End();
         base.Draw(gameTime);
