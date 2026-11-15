@@ -4,8 +4,8 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
-    <File>/home/anchovy/Dokumenti/Faks/3 letnik/TINR/Projekt/OniGirl/OniGirl/Content/Sprites/gameAtlas.png</File>
-    <File>/home/anchovy/Dokumenti/Faks/3 letnik/TINR/Projekt/OniGirl/OniGirl/Content/Sprites/Player_spriteAtlas.png</File>
+    <File>/home/yuki/Dokumenti/College/3 letnik/TINR/Projekt/OniGirl/OniGirl/Content/Sprites/gameAtlas.png</File>
+    <File>/home/yuki/Dokumenti/College/3 letnik/TINR/Projekt/OniGirl/OniGirl/Content/Sprites/Player_spriteAtlas.png</File>
   </SourceFiles>
   <DestFiles>
     <File xsi:nil="true" />

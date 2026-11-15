@@ -7,6 +7,8 @@ public class AnimatedTexture
     private int _animationWidth;
     private int _animationHeight;
     private int _currentFrame;
+
+    private int _currentFrameY;
     private float timePerFrame;
     private float totalElapsed;
 
@@ -17,12 +19,24 @@ public class AnimatedTexture
 
     public TextureRegion animationTexture;
 
-    public AnimatedTexture(int framesX, int framesY, TextureRegion texture, int framesPerSec)
+
+    public float Rotation, Scale, Depth;
+
+    public Vector2 Origin;
+
+
+    public AnimatedTexture(int framesX, int framesY, TextureRegion texture, int framesPerSec,
+    Vector2 origin,float rotation,float scale, float depth)
     {
         this.framesX = framesX;
         this.framesY = framesY;
 
+        this.Origin = origin;
+        this.Rotation = rotation;
+        this.Scale = scale;
+        this.Depth = depth;
         this.animationTexture = texture;
+
         timePerFrame = (float)1 /framesPerSec;
         totalElapsed = 0;
         _currentFrame = 0;
@@ -41,19 +55,23 @@ public class AnimatedTexture
             _currentFrame++;
             _currentFrame %= framesX;
 
+            _currentFrameY++;
+            _currentFrameY %= framesY;
+            
+
             totalElapsed -= timePerFrame;
         }
     }
 
-    public void DrawFrame(SpriteBatch batch, Vector2 screenPos, Color color, float rotation, Vector2 origin, Vector2 scale, SpriteEffects effects, float layerDepth)
+    public void DrawFrame(SpriteBatch batch, Vector2 screenPos,SpriteEffects effect)
     {
-        DrawFrame(batch, _currentFrame, screenPos, color, rotation, origin, scale, effects, layerDepth);
+        DrawFrame(batch, _currentFrame,_currentFrameY, screenPos,effect);
     }
 
-    public void DrawFrame(SpriteBatch batch, int frame, Vector2 screenPos, Color color, float rotation, Vector2 origin, Vector2 scale, SpriteEffects effects, float layerDepth)
+    public void DrawFrame(SpriteBatch batch, int frame,int frameY, Vector2 screenPos,SpriteEffects effects)
     {
         
-        Rectangle sourcerect = new Rectangle(_animationWidth* frame, 0,
+        Rectangle sourcerect = new Rectangle(_animationWidth* frame, _animationHeight * frameY,
             _animationWidth, _animationHeight);
 
         batch.Draw
@@ -62,11 +80,11 @@ public class AnimatedTexture
             screenPos, 
             sourcerect, 
             Color.White,
-            rotation, 
-            origin, 
-            scale, 
+            Rotation, 
+            Origin, 
+            Scale, 
             SpriteEffects.None, 
-            layerDepth
+            Depth
         );
     }
 

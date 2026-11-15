@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -12,17 +13,11 @@ public class Game1 : Game
 
     private TextureAtlas playerAtlas;
     private TextureAtlas gameAtlas;
+
+    private Player _oniGirl;
     //Player regions
-    private TextureRegion _playerIdle;
-
-    private AnimatedTexture idleAnimation;
-    private TextureRegion _playerportrait;
-
-    private TextureRegion _impIdle;
-
-    private TextureRegion _heart;
-
     
+    private TextureRegion _playerportrait;
 
     private TileMap _tileMap;
 
@@ -59,15 +54,11 @@ public class Game1 : Game
         _tileMap = TileMap.ReadFromFile(Content,"Content/tilemap.xml");
         _tileMap.scale = new Vector2(3.0f,3.0f);
 
+        _oniGirl = new Player(playerAtlas,100,new Vector2(500,500));
 
-
-
-        _playerIdle = playerAtlas.GetTextureRegion("playeridle");
-        idleAnimation = new AnimatedTexture(10,1,_playerIdle,10);
         _playerportrait = playerAtlas.GetTextureRegion("portrait");
 
-        _impIdle = gameAtlas.GetTextureRegion("impidle");
-        _heart = gameAtlas.GetTextureRegion("heart");
+        
 
     }
 
@@ -77,8 +68,13 @@ public class Game1 : Game
             Exit();
 
         // TODO: Add your update logic here
-        float elapsed = (float) gameTime.ElapsedGameTime.TotalSeconds;
-        idleAnimation.UpdateFrame(elapsed);
+        KeyboardState state = Keyboard.GetState();
+
+        _oniGirl.HandleInput();
+
+        _oniGirl.Update(gameTime);
+        _oniGirl.position.X += _oniGirl.velocity.X;
+        
         base.Update(gameTime);
     }
 
@@ -90,19 +86,8 @@ public class Game1 : Game
         _spriteBatch.Begin();
         _tileMap.Draw(_spriteBatch);
 
+        _oniGirl.Draw(_spriteBatch);
 
-        idleAnimation.DrawFrame
-        (
-
-            _spriteBatch,
-            new Vector2(500,500),
-            Color.White,
-            0.0f,
-            Vector2.Zero,
-            new Vector2(2,2),
-            SpriteEffects.FlipHorizontally,
-            0.0f    
-        );
         _playerportrait.Draw
         (
             _spriteBatch,
