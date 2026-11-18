@@ -25,6 +25,10 @@ public class Player
     public PlayerIdle idleState;
 
     public PlayerWalk walkState;
+
+    public PlayerRun runState;
+
+    public PlayerCrouch crouchState;
     public Vector2 position;
 
     public Vector2 playerOrigin;
@@ -45,6 +49,8 @@ public class Player
 
         idleState = new PlayerIdle(this);
         walkState = new PlayerWalk(this);
+        crouchState = new PlayerCrouch(this);
+        runState = new PlayerRun(this);
         
         currentState = idleState;
     }

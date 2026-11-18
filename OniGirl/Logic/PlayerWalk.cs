@@ -5,14 +5,8 @@ using System;
 
 public class PlayerWalk : PlayerState
 {
-    private AnimatedTexture walkAnimation;
-
-    public override int Width => 45;
-    
-    public override AnimatedSprite playerAnimation => player.playerAtlas.CreateAnimatedSprite("playerwalk");
-
-    public override int Height => 58;
-
+    private AnimatedSprite _walkAnimation;
+    public override AnimatedSprite playerAnimation => _walkAnimation;
 
     public float Rotation, Scale, Depth;
 
@@ -29,6 +23,11 @@ public class PlayerWalk : PlayerState
 
         Origin = Vector2.Zero;
 
+        _walkAnimation = player.playerAtlas.CreateAnimatedSprite("playerwalk");
+
+        _walkAnimation.Scale = new Vector2(2.0f,2.0f);
+
+
      
     }
     public override void Enter()
@@ -40,7 +39,7 @@ public class PlayerWalk : PlayerState
     {
         float elapsed = (float)gameTime.ElapsedGameTime.TotalSeconds;
        
-        playerAnimation.Update(gameTime);
+        _walkAnimation.Update(gameTime);
     }
 
     public override void HandleInput(KeyboardState current, KeyboardState previous, MouseState mouse)
@@ -49,7 +48,7 @@ public class PlayerWalk : PlayerState
         {
            
 
-           player.direction = 0;
+           player.direction = 1;
 
            player.velocity.X = player.SPEED;
         }
@@ -57,16 +56,11 @@ public class PlayerWalk : PlayerState
         {
           
 
-          player.direction = 1;
+          player.direction = 0;
 
           player.velocity.X = -player.SPEED;
 
 
-        }
-        else if (current.IsKeyDown(Keys.C) && previous.IsKeyUp(Keys.C))
-        {
-           //player.SwitchState(player.crouchState);
-           
         }
         else
         {
@@ -78,13 +72,13 @@ public class PlayerWalk : PlayerState
     {
         if(player.direction == 1)
         {
-            player.playerEffect = SpriteEffects.FlipHorizontally;
+            _walkAnimation.Effects = SpriteEffects.FlipHorizontally;
         }
         else
         {
-            player.playerEffect = SpriteEffects.None;
+            _walkAnimation.Effects = SpriteEffects.None;
         }
-        playerAnimation.Draw(batch,player.position);
+        _walkAnimation.Draw(batch,player.position);
 
     }
 

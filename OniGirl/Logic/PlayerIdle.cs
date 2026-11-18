@@ -5,11 +5,11 @@ using System;
 
 public class PlayerIdle : PlayerState
 {
-    public override int Width => 32;
-    
+   
+    private AnimatedSprite _idleAnimation;
+    public override AnimatedSprite playerAnimation => _idleAnimation;
 
-    public override AnimatedSprite playerAnimation => player.playerAtlas.CreateAnimatedSprite("playeridle");
-    public override int Height => 64;
+   
 
 
     public float Rotation, Scale, Depth;
@@ -27,6 +27,10 @@ public class PlayerIdle : PlayerState
 
         Origin = Vector2.Zero;
 
+        _idleAnimation  = player.playerAtlas.CreateAnimatedSprite("playeridle");
+
+        _idleAnimation.Scale = new Vector2(2.0f,2.0f);
+
              
     }
     public override void Enter()
@@ -36,10 +40,9 @@ public class PlayerIdle : PlayerState
 
     public override void Update(GameTime gameTime)
     {
-        float elapsed = (float)gameTime.ElapsedGameTime.TotalSeconds;
         player.velocity = Vector2.Zero;
         
-        playerAnimation.Update(gameTime);
+        _idleAnimation.Update(gameTime);
         
     }
 
@@ -57,6 +60,17 @@ public class PlayerIdle : PlayerState
 
 
         }
+        else  if (current.IsKeyDown(Keys.T))
+        {
+           
+          player.SwitchState(player.runState);
+
+        }
+        else if (current.IsKeyDown(Keys.LeftShift) && current.IsKeyDown(Keys.A))
+        {
+           
+           player.SwitchState(player.runState);
+        }
         else if (current.IsKeyDown(Keys.C) && previous.IsKeyUp(Keys.C))
         {
            //player.SwitchState(player.crouchState);
@@ -66,7 +80,15 @@ public class PlayerIdle : PlayerState
 
     public override void Draw(SpriteBatch batch,SpriteEffects effects)
     {
-        playerAnimation.Draw(batch,player.position);
+        if(player.direction == 1)
+        {
+            _idleAnimation.Effects = SpriteEffects.FlipHorizontally;
+        }
+        else
+        {
+            _idleAnimation.Effects = SpriteEffects.None;
+        }
+        _idleAnimation.Draw(batch,player.position);
 
     }
 

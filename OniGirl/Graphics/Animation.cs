@@ -25,5 +25,7 @@ public class Animation
         this.Delay = delay;
     }
 
+  
+
 
 }

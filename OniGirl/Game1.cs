@@ -83,7 +83,7 @@ public class Game1 : Game
         GraphicsDevice.Clear(Color.CornflowerBlue);
 
         // TODO: Add your drawing code here
-        _spriteBatch.Begin();
+        _spriteBatch.Begin(samplerState: SamplerState.PointClamp);
         _tileMap.Draw(_spriteBatch);
 
         _oniGirl.Draw(_spriteBatch);

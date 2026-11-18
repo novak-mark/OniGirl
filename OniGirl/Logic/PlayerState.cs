@@ -7,11 +7,7 @@ using Microsoft.Xna.Framework.Input;
 public abstract class PlayerState
 {
     protected Player player;
-
-    public abstract int Width {get;}
-
-    public abstract int Height {get; }
-
+   
     public abstract AnimatedSprite playerAnimation {get; }
 
     

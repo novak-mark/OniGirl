@@ -10,16 +10,21 @@ using Microsoft.Xna.Framework.Input;
 public class AnimatedSprite : Sprite
 {
     private int _currentFrame;
+
+    private Boolean _loopable;
+
+
     private TimeSpan _totalElapsed;
     private Animation _animation;
 
 
 
 
-    public AnimatedSprite(Animation animation)
+    public AnimatedSprite(Animation animation, Boolean loopable = true)
     {
 
         this._animation = animation;
+        this._loopable = loopable;
 
         sourceRegion = animation.Frames[0];
         _currentFrame = 0;
@@ -29,20 +34,27 @@ public class AnimatedSprite : Sprite
     public void Update(GameTime gameTime)
     {
         _totalElapsed += gameTime.ElapsedGameTime;
-        Console.WriteLine("halo" + _animation.Frames.Count);
-        if(_totalElapsed > _animation.Delay)
+        if(_totalElapsed >= _animation.Delay)
         {
+            
+
             _totalElapsed -= _animation.Delay;
             _currentFrame++;
-            Console.WriteLine(_animation.Frames.Count);
+            
             if(_currentFrame >= _animation.Frames.Count)
             {
-                _currentFrame = 0;
+                if(_loopable)
+                {
+                    _currentFrame = 0;
+                }
+                else
+                {
+                    return;
+                }
             }
 
             sourceRegion = _animation.Frames[_currentFrame];
         }
     }
-
    
 }

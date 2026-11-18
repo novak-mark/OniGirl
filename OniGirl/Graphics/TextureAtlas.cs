@@ -55,10 +55,10 @@ public class TextureAtlas
         return new Sprite(sourceRegion);
     }
 
-    public AnimatedSprite CreateAnimatedSprite(string animationName)
+    public AnimatedSprite CreateAnimatedSprite(string animationName,Boolean loopable=true)
     {
         Animation sourceAnimation = GetAnimation(animationName);
-        return new AnimatedSprite(sourceAnimation);
+        return new AnimatedSprite(sourceAnimation,loopable);
     }
 
     
