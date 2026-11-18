@@ -8,7 +8,9 @@ public class PlayerWalk : PlayerState
     private AnimatedTexture walkAnimation;
 
     public override int Width => 45;
-    public override TextureRegion animationTexture => player.playerAtlas.GetTextureRegion("playerwalk");
+    
+    public override AnimatedSprite playerAnimation => player.playerAtlas.CreateAnimatedSprite("playerwalk");
+
     public override int Height => 58;
 
 
@@ -27,8 +29,6 @@ public class PlayerWalk : PlayerState
 
         Origin = Vector2.Zero;
 
-        walkAnimation = new AnimatedTexture(4,6,animationTexture,10,Origin,Rotation,Scale,Depth);
-
      
     }
     public override void Enter()
@@ -40,7 +40,7 @@ public class PlayerWalk : PlayerState
     {
         float elapsed = (float)gameTime.ElapsedGameTime.TotalSeconds;
        
-        walkAnimation.UpdateFrame(elapsed);
+        playerAnimation.Update(gameTime);
     }
 
     public override void HandleInput(KeyboardState current, KeyboardState previous, MouseState mouse)
@@ -84,7 +84,7 @@ public class PlayerWalk : PlayerState
         {
             player.playerEffect = SpriteEffects.None;
         }
-        walkAnimation.DrawFrame(batch,player.position,effects);
+        playerAnimation.Draw(batch,player.position);
 
     }
 

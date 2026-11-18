@@ -5,10 +5,10 @@ using System;
 
 public class PlayerIdle : PlayerState
 {
-    private AnimatedTexture idleAnimation;
-
     public override int Width => 32;
-    public override TextureRegion animationTexture => player.playerAtlas.GetTextureRegion("playeridle");
+    
+
+    public override AnimatedSprite playerAnimation => player.playerAtlas.CreateAnimatedSprite("playeridle");
     public override int Height => 64;
 
 
@@ -27,9 +27,7 @@ public class PlayerIdle : PlayerState
 
         Origin = Vector2.Zero;
 
-        idleAnimation = new AnimatedTexture(10,1,animationTexture,10,Origin,Rotation,Scale,Depth);
-
-     
+             
     }
     public override void Enter()
     {
@@ -40,7 +38,9 @@ public class PlayerIdle : PlayerState
     {
         float elapsed = (float)gameTime.ElapsedGameTime.TotalSeconds;
         player.velocity = Vector2.Zero;
-        idleAnimation.UpdateFrame(elapsed);
+        
+        playerAnimation.Update(gameTime);
+        
     }
 
     public override void HandleInput(KeyboardState current, KeyboardState previous, MouseState mouse)
@@ -66,7 +66,7 @@ public class PlayerIdle : PlayerState
 
     public override void Draw(SpriteBatch batch,SpriteEffects effects)
     {
-        idleAnimation.DrawFrame(batch,player.position,effects);
+        playerAnimation.Draw(batch,player.position);
 
     }
 

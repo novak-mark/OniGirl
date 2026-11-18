@@ -1,68 +1,82 @@
+using System;
+using System.Reflection;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
+
+
 
 
 public class AnimatedTexture
 {
+    private int _currentFrame;
+    private TimeSpan _totalElapsed;
+    private Animation _animation;
+
     private int _animationWidth;
     private int _animationHeight;
-    private int _currentFrame;
-
-    private int _currentFrameY;
-    private float timePerFrame;
-    private float totalElapsed;
-
-
-    public int framesX;
-
-    public int framesY;
-
-    public TextureRegion animationTexture;
-
-
+    public TextureRegion animationRegion;
     public float Rotation, Scale, Depth;
 
     public Vector2 Origin;
 
 
-    public AnimatedTexture(int framesX, int framesY, TextureRegion texture, int framesPerSec,
-    Vector2 origin,float rotation,float scale, float depth)
+    public AnimatedTexture(Animation animation, Vector2 origin,float rotation,float scale, float depth)
     {
-        this.framesX = framesX;
-        this.framesY = framesY;
 
         this.Origin = origin;
         this.Rotation = rotation;
         this.Scale = scale;
         this.Depth = depth;
-        this.animationTexture = texture;
+        
 
-        timePerFrame = (float)1 /framesPerSec;
-        totalElapsed = 0;
+        this._animation = animation;
+
+    
         _currentFrame = 0;
-        _animationWidth = animationTexture.sourceRect.Width;
-        _animationHeight = animationTexture.sourceRect.Height;
+        _animationWidth = animation.Frames[0].textureWidth;
+        _animationHeight = animation.Frames[0].textureHeight;
+
+
 
 
     }
 
-    public void UpdateFrame(float elapsed)
+    public void UpdateFrame(GameTime gameTime)
     {
-        totalElapsed += elapsed;
+        _totalElapsed += gameTime.ElapsedGameTime;
 
-        if(totalElapsed > timePerFrame)
+        if(_totalElapsed > _animation.Delay)
         {
+            _totalElapsed -= _animation.Delay;
             _currentFrame++;
-            _currentFrame %= framesX;
 
-            _currentFrameY++;
-            _currentFrameY %= framesY;
-            
+            if(_currentFrame >= _animation.Frames.Count)
+            {
+                _currentFrame = 0;
+            }
 
-            totalElapsed -= timePerFrame;
+            animationRegion = _animation.Frames[_currentFrame];
         }
     }
 
+    public void Draw(SpriteBatch batch, Vector2 screenPos,SpriteEffects effects)
+    {
+        batch.Draw
+        (
+            animationRegion.texture, 
+            screenPos, 
+            animationRegion.sourceRect, 
+            Color.White,
+            Rotation, 
+            Origin, 
+            new Vector2(Scale,Scale), 
+            SpriteEffects.None, 
+            Depth
+        );
+    }
+
+    /*
     public void DrawFrame(SpriteBatch batch, Vector2 screenPos,SpriteEffects effect)
     {
         DrawFrame(batch, _currentFrame,_currentFrameY, screenPos,effect);
@@ -87,6 +101,8 @@ public class AnimatedTexture
             Depth
         );
     }
+
+    */
 
 
 }

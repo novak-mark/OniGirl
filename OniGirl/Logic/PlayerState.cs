@@ -12,7 +12,7 @@ public abstract class PlayerState
 
     public abstract int Height {get; }
 
-    public abstract TextureRegion animationTexture {get; }
+    public abstract AnimatedSprite playerAnimation {get; }
 
     
     protected PlayerState(Player player)
