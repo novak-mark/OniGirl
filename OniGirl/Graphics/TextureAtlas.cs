@@ -101,11 +101,14 @@ public class TextureAtlas
 
                 var animationElements = root.Element("Animations")?.Elements("Animation");
 
+                
+
                 if(animationElements != null)
                 {
                     foreach(var animationElement in animationElements)
                     {
                         string animationName = animationElement.Attribute("name")?.Value;
+                        Console.WriteLine($"Loading animation: {animationName}");
                         float delayMiliSecs = float.Parse(animationElement.Attribute("delay")?.Value ?? "0");
                         TimeSpan delay = TimeSpan.FromMilliseconds(delayMiliSecs);
 

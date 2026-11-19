@@ -36,43 +36,106 @@
         <Region name="playerwalk-22" x="173" y="386" width="45" height="58"/>
         <Region name="playerwalk-23" x="218" y="386" width="45" height="58"/>
         <Region name="playerwalk-24" x="263" y="386" width="45" height="58"/>
-        <Region name="playercrouch-1" x="384" y="480" width="53" height="50" />
-        <Region name="playercrouch-2" x="437" y="480" width="53" height="50" />
-        <Region name="playercrouch-3" x="490" y="480" width="53" height="50" />
-        <Region name="playercrouch-4" x="384" y="530" width="53" height="50" />
-        <Region name="playercrouch-5" x="437" y="530" width="53" height="50" />
-        <Region name="playercrouch-6" x="490" y="530" width="53" height="50" />
-        <Region name="playercrouch-7" x="384" y="580" width="53" height="50" />
-        <Region name="playercrouch-8" x="437" y="580" width="53" height="50" />
-        <Region name="playercrouch-9" x="490" y="580" width="53" height="50" />
-        <Region name="playercrouch-10" x="384" y="630" width="53" height="50" />
-        <Region name="playercrouch-11" x="437" y="630" width="53" height="50" />
-        <Region name="playercrouch-12" x="490" y="630" width="53" height="50" />
-        <Region name="playercrouch-13" x="384" y="680" width="53" height="50" />
-        <Region name="playercrouch-14" x="437" y="680" width="53" height="50" />
-        <Region name="playercrouch-15" x="490" y="680" width="53" height="50" />
-        <Region name="playerrunstart-1" x="0" y="480" width="59" height="53" />
-        <Region name="playerrunstart-2" x="59" y="480" width="59" height= "53" />
-        <Region name="playerrun-1" x="128" y="480" width="60" height= "48" />
-        <Region name="playerrun-2" x="193" y="480" width="60" height="48" />
-        <Region name="playerrun-3" x="258" y="480" width="60" height="48" />
-        <Region name="playerrun-4" x="323" y="480" width="60" height="48" />
-        <Region name="playerrun-5" x="128" y="528" width="60" height="48" />
-        <Region name="playerrun-6" x="193" y="528" width="60" height="48" />
-        <Region name="playerrun-7" x="258" y="528" width="60" height="48" />
-        <Region name="playerrun-8" x="323" y="528" width="60" height="48" />
-        <Region name="playerrun-9" x="128" y="576" width="65" height="48" />
-        <Region name="playerrun-10" x="193" y="576" width="65" height="48" />
-        <Region name="playerrun-11" x="258" y="576" width="65" height="48" />
-        <Region name="playerrun-12" x="323" y="576" width="65" height="48" />
-        <Region name="playerrun-13" x="128" y="624" width="65" height="48" />
-        <Region name="playerrun-14" x="193" y="624" width="65" height="48" />
-        <Region name="playerrun-15" x="258" y="624" width="65" height="48" />
-        <Region name="playerrun-16" x="323" y="624" width="65" height="48" />
-        <Region name="playerrun-17" x="128"  y="672" width="65" height="48" />
-        <Region name="playerrun-18" x="193" y="672" width="65" height="48" />
-        <Region name="playerrun-19" x="258" y="672" width="65" height="48" />
-        <Region name="playerrun-20" x="323" y="672" width="65" height="48" />
+
+        <Region name="playercrouch-1" x="320" y="769" width="53" height="50" />
+        <Region name="playercrouch-2" x="373" y="769" width="53" height="50" />
+        <Region name="playercrouch-3" x="426" y="769" width="53" height="50" />
+        <Region name="playercrouch-4" x="320" y="819" width="53" height="50" />
+        <Region name="playercrouch-5" x="373" y="819" width="53" height="50" />
+        <Region name="playercrouch-6" x="426" y="819" width="53" height="50" />
+        <Region name="playercrouch-7" x="320" y="869" width="53" height="50" />
+        <Region name="playercrouch-8" x="373" y="869" width="53" height="50" />
+        <Region name="playercrouch-9" x="426" y="869" width="53" height="50" />
+        <Region name="playercrouch-10" x="320" y="919" width="53" height="50" />
+        <Region name="playercrouch-11" x="373" y="919" width="53" height="50" />
+        <Region name="playercrouch-12" x="426" y="919" width="53" height="50" />
+        <Region name="playercrouch-13" x="320" y="969" width="53" height="50" />
+
+        <Region name="playerrun-1" x="0" y="480"    width="65" height= "48" />
+        <Region name="playerrun-2" x="65" y="480"   width="65" height="48" />
+        <Region name="playerrun-3" x="130" y="480"  width="65" height="48" />
+        <Region name="playerrun-4" x="195" y="480"  width="65" height="48" />
+        <Region name="playerrun-5" x="0" y="528"    width="65" height="48" />
+        <Region name="playerrun-6" x="65" y="528"   width="65" height="48" />
+        <Region name="playerrun-7" x="130" y="528"  width="65" height="48" />
+        <Region name="playerrun-8" x="195" y="528"  width="65" height="48" />
+        <Region name="playerrun-9"  x="0" y="576"   width="65" height="48" />
+        <Region name="playerrun-10" x="65" y="576"  width="65" height="48" />
+        <Region name="playerrun-11" x="130" y="576" width="65" height="48" />
+        <Region name="playerrun-12" x="195" y="576" width="65" height="48" />
+        <Region name="playerrun-13" x="0" y="624"   width="65" height="48" />
+        <Region name="playerrun-14" x="65" y="624"  width="65" height="48" />
+        <Region name="playerrun-15" x="130" y="624" width="65" height="48" />
+        <Region name="playerrun-16" x="195" y="624" width="65" height="48" />
+        <Region name="playerrun-17" x="0"  y="672"  width="65" height="48" />
+        <Region name="playerrun-18" x="65" y="672"  width="65" height="48" />
+        <Region name="playerrun-19" x="130" y="672" width="65" height="48" />
+        <Region name="playerrun-20" x="195" y="672" width="65" height="48" />
+
+        <Region name="playerrunturn-1" x="1152" y="385" width="59" height="51" />
+        <Region name="playerrunturn-2" x="1211" y="385" width="59" height="51" />
+        <Region name="playerrunturn-3" x="1270" y="385" width="59" height="51" />
+        <Region name="playerrunturn-4" x="1329" y="385" width="59" height="51" />
+        <Region name="playerrunturn-5" x="1152" y="436" width="59" height="51" />
+        <Region name="playerrunturn-6" x="1211" y="436" width="59" height="51" />
+        <Region name="playerrunturn-7" x="1270" y="436" width="59" height="51" />
+        <Region name="playerrunturn-8" x="1329" y="436" width="59" height="51" />
+
+        <Region name="playerrunexit-1"  x="0"   y="768" width="63" height="53" />
+        <Region name="playerrunexit-2"  x="63"  y="768" width="63" height="53" />
+        <Region name="playerrunexit-3"  x="126" y="768" width="63" height="53" />
+        <Region name="playerrunexit-4"  x="189" y="768" width="63" height="53" />
+        <Region name="playerrunexit-5"  x="0"   y="821" width="63" height="53" />
+        <Region name="playerrunexit-6"  x="63"  y="821" width="63" height="53" />
+        <Region name="playerrunexit-7"  x="126" y="821" width="63" height="53" />
+        <Region name="playerrunexit-8"  x="189" y="821" width="63" height="53" />
+        <Region name="playerrunexit-9"  x="0"   y="874"   width="63" height="53" />
+        <Region name="playerrunexit-10" x="63"  y="874"  width="63" height="53" />
+        <Region name="playerrunexit-11" x="126" y="874" width="63" height="53" />
+        <Region name="playerrunexit-12" x="189" y="874" width="63" height="53" />
+        <Region name="playerrunexit-13" x="0"   y="927" width="63" height="53" />
+        <Region name="playerrunexit-14" x="63"  y="927" width="63" height="53" />
+        <Region name="playerrunexit-15" x="126" y="927" width="63" height="53" />
+        
+
+        <Region name="playerattack-1" x="1195" y="1" width="64" height="64" />
+        <Region name="playerattack-2" x="1355" y="1" width="64" height="64" />
+        <Region name="playerattack-3" x="1510" y="1" width="64" height="64" />
+        <Region name="playerattack-4" x="1574" y="1" width="160" height="64" />
+        <Region name="playerattack-5" x="1092" y="65" width="160" height="64" />
+        <Region name="playerattack-6" x="1252" y="65" width="160" height="64" />
+        <Region name="playerattack-7" x="1412" y="65" width="160" height="64" />
+        <Region name="playerattack-8" x="1572" y="65" width="160" height="64" />
+        <Region name="playerattack-9" x="1092"  y="129" width="160" height="64" />
+        <Region name="playerattack-10" x="1252" y="129" width="160" height="64" />
+        <Region name="playerattack-11" x="1412" y="129" width="160" height="64" />
+        <Region name="playerattack-12" x="1572" y="129" width="160" height="64" />
+        <Region name="playerattack-13" x="1092" y="193" width="160" height="64" />
+        <Region name="playerattack-14" x="1252" y="193" width="160" height="64" />
+        <Region name="playerattack-15" x="1412" y="193" width="160" height="64" />
+        <Region name="playerattack-16" x="1572" y="193" width="160" height="64" />
+        <Region name="playerattack-17" x="1192" y="262" width="64" height="64" />
+
+    
+        <Region name="playerheal-1"  x="1152" y="576" width="97" height="81"/>
+        <Region name="playerheal-2"  x="1249" y="576" width="97" height="81"/>
+        <Region name="playerheal-3"  x="1346" y="576" width="97" height="81"/>
+        <Region name="playerheal-4"  x="1152" y="657" width="97" height="81"/>
+        <Region name="playerheal-5"  x="1249" y="657" width="97" height="81"/>
+        <Region name="playerheal-6"  x="1346" y="657" width="97" height="81"/>
+        <Region name="playerheal-7"  x="1152" y="738" width="97" height="81"/>
+        <Region name="playerheal-8"  x="1249" y="738" width="97" height="81"/>
+        <Region name="playerheal-9"  x="1346" y="738" width="97" height="81"/>
+        <Region name="playerheal-10" x="1152" y="819" width="97" height="81"/>
+        <Region name="playerheal-11" x="1249" y="819" width="97" height="81"/>
+        <Region name="playerheal-12" x="1346" y="819" width="97" height="81"/>
+        <Region name="playerheal-13" x="1152" y="900" width="97" height="81"/>
+        <Region name="playerheal-14" x="1249" y="900" width="97" height="81"/>
+        <Region name="playerheal-15" x="1346" y="900" width="97" height="81"/>
+        <Region name="playerheal-16" x="1152" y="981" width="97" height="81"/>
+        <Region name="playerheal-17" x="1249" y="981" width="97" height="81"/>
+        <Region name="playerheal-18" x="1346" y="981" width="97" height="81"/>
+
         <Region name="portrait"      x="1664" y="672" width="256" height="410" />
     </Regions>
     <Animations> 
@@ -128,14 +191,8 @@
             <Frame region="playercrouch-11"/>
             <Frame region="playercrouch-12"/>
             <Frame region="playercrouch-13"/>
-            <Frame region="playercrouch-14"/>
-            <Frame region="playercrouch-15"/>
         </Animation>
-        <Animation name="playerrunstart" delay="70">
-            <Frame region="playerrun-1"/>
-            <Frame region="playerrun-2"/>
-        </Animation>
-        <Animation name="playerrun" delay="70">
+        <Animation name="playerrun" delay="60">
             <Frame region="playerrun-1"/>
             <Frame region="playerrun-2"/>
             <Frame region="playerrun-3"/>
@@ -157,5 +214,71 @@
             <Frame region="playerrun-19"/>
             <Frame region="playerrun-20"/>
         </Animation>
+        <Animation name="playerattack" delay="50">
+            <Frame region="playerattack-1"/>
+            <Frame region="playerattack-2"/>
+            <Frame region="playerattack-3"/>
+            <Frame region="playerattack-4"/>
+            <Frame region="playerattack-5"/>
+            <Frame region="playerattack-6"/>
+            <Frame region="playerattack-7"/>
+            <Frame region="playerattack-8"/>
+            <Frame region="playerattack-9"/>
+            <Frame region="playerattack-10"/>
+            <Frame region="playerattack-11"/>
+            <Frame region="playerattack-12"/>
+            <Frame region="playerattack-13"/>
+            <Frame region="playerattack-14"/>
+            <Frame region="playerattack-15"/>
+            <Frame region="playerattack-16"/>
+            <Frame region="playerattack-17"/>
+        </Animation>
+        <Animation name="playerrunexit" delay="60">
+            <Frame region="playerrunexit-1"/>
+            <Frame region="playerrunexit-2"/>
+            <Frame region="playerrunexit-3"/>
+            <Frame region="playerrunexit-4"/>
+            <Frame region="playerrunexit-5"/>
+            <Frame region="playerrunexit-6"/>
+            <Frame region="playerrunexit-7"/>
+            <Frame region="playerrunexit-8"/>
+            <Frame region="playerrunexit-9"/>
+            <Frame region="playerrunexit-10"/>
+            <Frame region="playerrunexit-11"/>
+            <Frame region="playerrunexit-12"/>
+            <Frame region="playerrunexit-13"/>
+            <Frame region="playerrunexit-14"/>
+            <Frame region="playerrunexit-15"/>
+        </Animation>
+        <Animation name="playerrunturn" delay="70">
+            <Frame region="playerrunturn-1"/>
+            <Frame region="playerrunturn-2"/>
+            <Frame region="playerrunturn-3"/>
+            <Frame region="playerrunturn-4"/>
+            <Frame region="playerrunturn-5"/>
+            <Frame region="playerrunturn-6"/>
+            <Frame region="playerrunturn-7"/>
+            <Frame region="playerrunturn-8"/>
+        </Animation>
+        <Animation name="playerheal" delay="70">
+            <Frame region="playerheal-1"/>
+            <Frame region="playerheal-2"/>
+            <Frame region="playerheal-3"/>
+            <Frame region="playerheal-4"/>
+            <Frame region="playerheal-5"/>
+            <Frame region="playerheal-6"/>
+            <Frame region="playerheal-7"/>
+            <Frame region="playerheal-8"/>
+            <Frame region="playerheal-9"/>
+            <Frame region="playerheal-10"/>
+            <Frame region="playerheal-11"/>
+            <Frame region="playerheal-12"/>
+            <Frame region="playerheal-13"/>
+            <Frame region="playerheal-14"/>
+            <Frame region="playerheal-15"/>
+            <Frame region="playerheal-16"/>
+            <Frame region="playerheal-17"/>
+        <Frame region="playerheal-18"/>
+    </Animation>
     </Animations>
 </TextureAtlas>

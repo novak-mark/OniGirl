@@ -50,31 +50,26 @@ public class PlayerIdle : PlayerState
     {
         if (current.IsKeyDown(Keys.D))
         {
-           player.SwitchState(player.walkState);
-
-
-        }
-        else if (current.IsKeyDown(Keys.A))
-        {
-          player.SwitchState(player.walkState);
-
-
-        }
-        else  if (current.IsKeyDown(Keys.T))
-        {
-           
-          player.SwitchState(player.runState);
-
-        }
-        else if (current.IsKeyDown(Keys.LeftShift) && current.IsKeyDown(Keys.A))
-        {
            
            player.SwitchState(player.runState);
         }
+        else if(current.IsKeyDown(Keys.A))
+        {
+            player.SwitchState(player.runState);
+        }
+     
+        else if (mouse.LeftButton == ButtonState.Pressed)
+        {
+            player.SwitchState(player.attackState);
+        }
         else if (current.IsKeyDown(Keys.C) && previous.IsKeyUp(Keys.C))
         {
-           //player.SwitchState(player.crouchState);
+           player.SwitchState(player.crouchState);
            
+        }
+        else if(current.IsKeyDown(Keys.H) && previous.IsKeyUp(Keys.H))
+        {
+            player.SwitchState(player.healState);
         }
     }
 

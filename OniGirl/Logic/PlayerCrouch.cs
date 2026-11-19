@@ -30,12 +30,17 @@ public class PlayerCrouch : PlayerState
     public override void Enter()
     {
         Console.WriteLine("Crouch State");
+        
     }
 
     public override void Update(GameTime gameTime)
     {
         player.velocity = Vector2.Zero;
         
+        if(_crouchAnimation.PlayOnce(gameTime))
+        {
+            player.SwitchState(player.idleState);
+        }
        
 
         

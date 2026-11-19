@@ -67,8 +67,7 @@ public class Game1 : Game
         if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
             Exit();
 
-        // TODO: Add your update logic here
-        KeyboardState state = Keyboard.GetState();
+       
 
         _oniGirl.HandleInput();
 

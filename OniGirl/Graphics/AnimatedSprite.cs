@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Concurrent;
 using System.Reflection;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -41,20 +42,33 @@ public class AnimatedSprite : Sprite
             _totalElapsed -= _animation.Delay;
             _currentFrame++;
             
-            if(_currentFrame >= _animation.Frames.Count)
+            if(_currentFrame >= _animation.Frames.Count && _loopable)
             {
-                if(_loopable)
-                {
-                    _currentFrame = 0;
-                }
-                else
-                {
-                    return;
-                }
+                 _currentFrame = 0;
+                
             }
 
             sourceRegion = _animation.Frames[_currentFrame];
         }
+    }
+
+    public Boolean PlayOnce(GameTime gameTime)
+    {
+        
+        _totalElapsed += gameTime.ElapsedGameTime;
+        if(_totalElapsed >= _animation.Delay)
+        {
+            
+            _totalElapsed -= _animation.Delay;
+            _currentFrame++;
+            if(_currentFrame >= _animation.Frames.Count)
+            {
+                _currentFrame = 0;
+                 return true; 
+            }
+            sourceRegion = _animation.Frames[_currentFrame];
+        }
+        return false;
     }
    
 }

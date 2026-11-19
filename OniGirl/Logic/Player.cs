@@ -28,7 +28,14 @@ public class Player
 
     public PlayerRun runState;
 
+    public PlayerAttack attackState;
+
     public PlayerCrouch crouchState;
+
+    public PlayerExitRun exitRunState;
+    public PlayerRunTurn turnRunState;
+
+    public PlayerHeal healState;
     public Vector2 position;
 
     public Vector2 playerOrigin;
@@ -51,6 +58,10 @@ public class Player
         walkState = new PlayerWalk(this);
         crouchState = new PlayerCrouch(this);
         runState = new PlayerRun(this);
+        attackState = new PlayerAttack(this);
+        exitRunState = new PlayerExitRun(this);
+        turnRunState = new PlayerRunTurn(this);
+        healState = new PlayerHeal(this);
         
         currentState = idleState;
     }
