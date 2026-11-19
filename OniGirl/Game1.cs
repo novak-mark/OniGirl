@@ -10,6 +10,8 @@ public class Game1 : Game
     private GraphicsDeviceManager _graphics;
     private SpriteBatch _spriteBatch;
 
+    private AnimatedSprite _impIdle;
+
     
     private TextureAtlas playerAtlas;
     private TextureAtlas gameAtlas;
@@ -58,6 +60,8 @@ public class Game1 : Game
 
         _playerportrait = playerAtlas.GetTextureRegion("portrait");
 
+        _impIdle = gameAtlas.CreateAnimatedSprite("impidle");
+
         
 
     }
@@ -74,6 +78,7 @@ public class Game1 : Game
         _oniGirl.Update(gameTime);
         _oniGirl.position.X += _oniGirl.velocity.X;
         
+        _impIdle.Update(gameTime);
         base.Update(gameTime);
     }
 
@@ -97,6 +102,12 @@ public class Game1 : Game
             new Vector2(0.5f,0.5f),
             SpriteEffects.FlipHorizontally,
             0.0f    
+        );
+
+        _impIdle.Draw
+        (
+            _spriteBatch,
+            new Vector2(500,500)
         );
 
        

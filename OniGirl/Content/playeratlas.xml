@@ -278,7 +278,7 @@
             <Frame region="playerheal-15"/>
             <Frame region="playerheal-16"/>
             <Frame region="playerheal-17"/>
-        <Frame region="playerheal-18"/>
-    </Animation>
+            <Frame region="playerheal-18"/>
+        </Animation>
     </Animations>
 </TextureAtlas>
