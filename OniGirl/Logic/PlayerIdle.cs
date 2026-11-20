@@ -40,7 +40,10 @@ public class PlayerIdle : PlayerState
 
     public override void Update(GameTime gameTime)
     {
-        player.velocity = Vector2.Zero;
+        player.velocity.X = 0;
+        
+        player.velocity.Y = 0;
+
         
         _idleAnimation.Update(gameTime);
         
@@ -66,6 +69,10 @@ public class PlayerIdle : PlayerState
         {
            player.SwitchState(player.crouchState);
            
+        }
+        else if(current.IsKeyDown(Keys.Space) && previous.IsKeyUp(Keys.Space))
+        {
+            player.SwitchState(player.jumpState);
         }
         else if(current.IsKeyDown(Keys.H) && previous.IsKeyUp(Keys.H))
         {

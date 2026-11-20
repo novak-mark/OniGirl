@@ -1,3 +1,4 @@
+using System;
 using System.Transactions;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -13,6 +14,13 @@ public class Player
     public Vector2 velocity;
 
     public float SPEED = 2.5f;
+
+    public float jumpStrength = -8f;
+
+    public float groundY;
+
+
+    public Boolean isGrounded = true;
 
     public int currentHP;
 
@@ -35,6 +43,8 @@ public class Player
     public PlayerExitRun exitRunState;
     public PlayerRunTurn turnRunState;
 
+    public PlayerJump jumpState;
+
     public PlayerHeal healState;
     public Vector2 position;
 
@@ -47,6 +57,9 @@ public class Player
         this.playerAtlas = playerAtlas;
         this._maxHP = HP;
         this.position = startPosition;
+
+        this.groundY = startPosition.Y;
+
 
         currentHP = _maxHP;
 
@@ -62,6 +75,7 @@ public class Player
         exitRunState = new PlayerExitRun(this);
         turnRunState = new PlayerRunTurn(this);
         healState = new PlayerHeal(this);
+        jumpState = new PlayerJump(this);
         
         currentState = idleState;
     }

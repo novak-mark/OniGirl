@@ -136,6 +136,32 @@
         <Region name="playerheal-17" x="1249" y="981" width="97" height="81"/>
         <Region name="playerheal-18" x="1346" y="981" width="97" height="81"/>
 
+        <Region name="playerjump-1"  x="512"  y="0"    width="64" height="80"/>
+        <Region name="playerjump-2"  x="576"  y="0"    width="64" height="80"/>
+        <Region name="playerjump-3"  x="640"  y="0"    width="64" height="80"/>
+        <Region name="playerjump-4"  x="704"  y="0"    width="64" height="80"/>
+        <Region name="playerjump-5"  x="512"  y="80"   width="64" height="80"/>
+        <Region name="playerjump-6"  x="576"  y="80"   width="64" height="80"/>
+        <Region name="playerjump-7"  x="640"  y="80"   width="64" height="80"/>
+        <Region name="playerjump-8"  x="704"  y="80"   width="64" height="80"/>
+        <Region name="playerjump-9"  x="512"  y="160"  width="64" height="80"/>
+        <Region name="playerjump-10" x="576" y="160" width="64" height="80"/>
+        <Region name="playerjump-11" x="640" y="160" width="64" height="80"/>
+        <Region name="playerjump-12" x="704" y="160" width="64" height="80"/>
+        <Region name="playerjump-13" x="512" y="240" width="64" height="80"/>
+        <Region name="playerjump-14" x="576" y="240" width="64" height="80"/>
+        <Region name="playerjump-15" x="640" y="240" width="64" height="80"/>
+        <Region name="playerjump-16" x="704" y="240" width="64" height="80"/>
+        <Region name="playerjump-17" x="512" y="320" width="64" height="80"/>
+        <Region name="playerjump-18" x="576" y="320" width="64" height="80"/>
+        <Region name="playerjump-19" x="640" y="320" width="64" height="80"/>
+        <Region name="playerjump-20" x="704" y="320" width="64" height="80"/>
+        <Region name="playerjump-21" x="512" y="400" width="64" height="80"/>
+        <Region name="playerjump-22" x="576" y="400" width="64" height="80"/>
+        <Region name="playerjump-23" x="640" y="400" width="64" height="80"/>
+        <Region name="playerjump-24" x="704" y="400" width="64" height="80"/>
+        
+
         <Region name="portrait"      x="1664" y="672" width="256" height="410" />
     </Regions>
     <Animations> 
@@ -279,6 +305,32 @@
             <Frame region="playerheal-16"/>
             <Frame region="playerheal-17"/>
             <Frame region="playerheal-18"/>
+        </Animation>
+        <Animation name="playerjump" delay="70">
+            <Frame region="playerjump-1"/>
+            <Frame region="playerjump-2"/>
+            <Frame region="playerjump-3"/>
+            <Frame region="playerjump-4"/>
+            <Frame region="playerjump-5"/>
+            <Frame region="playerjump-6"/>
+            <Frame region="playerjump-7"/>
+            <Frame region="playerjump-8"/>
+            <Frame region="playerjump-9"/>
+            <Frame region="playerjump-10"/>
+            <Frame region="playerjump-11"/>
+            <Frame region="playerjump-12"/>
+            <Frame region="playerjump-13"/>
+            <Frame region="playerjump-14"/>
+            <Frame region="playerjump-15"/>
+            <Frame region="playerjump-16"/>
+            <Frame region="playerjump-17"/>
+            <Frame region="playerjump-18"/>
+            <Frame region="playerjump-19"/>
+            <Frame region="playerjump-20"/>
+            <Frame region="playerjump-21"/>
+            <Frame region="playerjump-22"/>
+            <Frame region="playerjump-23"/>
+            <Frame region="playerjump-24"/>
         </Animation>
     </Animations>
 </TextureAtlas>

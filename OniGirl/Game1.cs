@@ -77,6 +77,7 @@ public class Game1 : Game
 
         _oniGirl.Update(gameTime);
         _oniGirl.position.X += _oniGirl.velocity.X;
+        _oniGirl.position.Y += _oniGirl.velocity.Y;
         
         _impIdle.Update(gameTime);
         base.Update(gameTime);
