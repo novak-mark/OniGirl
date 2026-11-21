@@ -12,6 +12,17 @@ public class Game1 : Game
 
     private AnimatedSprite _impIdle;
 
+    private Texture2D _backgroundFrontLayer;
+
+    private Texture2D _backgroundMiddleLayer;
+
+    private Texture2D _backgroundBackLayer;
+
+    private Texture2D _backgroundLayer;
+
+    private int _screenWidth;
+    private int _screenHeight;
+
     
     private TextureAtlas playerAtlas;
     private TextureAtlas gameAtlas;
@@ -51,12 +62,22 @@ public class Game1 : Game
         _spriteBatch = new SpriteBatch(GraphicsDevice);
 
         // TODO: use this.Content to load your game content here
+        _screenHeight = _graphics.PreferredBackBufferHeight;
+        _screenWidth = _graphics.PreferredBackBufferWidth;
+        _backgroundFrontLayer = Content.Load<Texture2D>("Images/Background/front layer");
+        _backgroundMiddleLayer = Content.Load<Texture2D>("Images/Background/middle layer");
+        _backgroundBackLayer = Content.Load<Texture2D>("Images/Background/back layer");
+        _backgroundLayer = Content.Load<Texture2D>("Images/Background/Background layer");
+
+
+
+
         playerAtlas = TextureAtlas.ReadFromFile(Content, "Content/playeratlas.xml");
         gameAtlas = TextureAtlas.ReadFromFile(Content,"Content/gameAtlas.xml");
         _tileMap = TileMap.ReadFromFile(Content,"Content/tilemap.xml");
         _tileMap.scale = new Vector2(3.0f,3.0f);
 
-        _oniGirl = new Player(playerAtlas,100,new Vector2(500,500));
+        _oniGirl = new Player(playerAtlas,100,new Vector2(500,750));
 
         _playerportrait = playerAtlas.GetTextureRegion("portrait");
 
@@ -89,6 +110,13 @@ public class Game1 : Game
 
         // TODO: Add your drawing code here
         _spriteBatch.Begin(samplerState: SamplerState.PointClamp);
+
+        _spriteBatch.Draw(_backgroundLayer,      new Rectangle(0,0,_screenWidth,_screenHeight),Color.White);
+        _spriteBatch.Draw(_backgroundBackLayer,  new Rectangle(0,0,_screenWidth,_screenHeight),Color.White);
+        _spriteBatch.Draw(_backgroundMiddleLayer,new Rectangle(0,0,_screenWidth,_screenHeight),Color.White);
+        _spriteBatch.Draw(_backgroundFrontLayer, new Rectangle(0,0,_screenWidth,_screenHeight),Color.White);
+
+
         _tileMap.Draw(_spriteBatch);
 
         _oniGirl.Draw(_spriteBatch);
@@ -108,7 +136,7 @@ public class Game1 : Game
         _impIdle.Draw
         (
             _spriteBatch,
-            new Vector2(500,500)
+            new Vector2(1500,700)
         );
 
        

@@ -42,7 +42,7 @@ public class AnimatedSprite : Sprite
             _totalElapsed -= _animation.Delay;
             _currentFrame++;
             
-            if(_currentFrame >= _animation.Frames.Count && _loopable)
+            if(_currentFrame >= _animation.Frames.Count)
             {
                  _currentFrame = 0;
                 

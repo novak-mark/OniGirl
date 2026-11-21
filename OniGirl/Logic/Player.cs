@@ -15,12 +15,11 @@ public class Player
 
     public float SPEED = 2.5f;
 
-    public float jumpStrength = -8f;
+    public float JUMP = 8f;
 
     public float groundY;
 
-
-    public Boolean isGrounded = true;
+    public Boolean isOnGround = true;
 
     public int currentHP;
 
@@ -43,8 +42,10 @@ public class Player
     public PlayerExitRun exitRunState;
     public PlayerRunTurn turnRunState;
 
-    public PlayerJump jumpState;
+    public PlayerJumpStart startJumpState;
 
+    public PlayerJumpFall  fallJumpState;
+    public PlayerJumpExit exitJumpState;
     public PlayerHeal healState;
     public Vector2 position;
 
@@ -75,7 +76,9 @@ public class Player
         exitRunState = new PlayerExitRun(this);
         turnRunState = new PlayerRunTurn(this);
         healState = new PlayerHeal(this);
-        jumpState = new PlayerJump(this);
+        startJumpState = new PlayerJumpStart(this);
+        fallJumpState = new PlayerJumpFall(this);
+        exitJumpState = new PlayerJumpExit(this);
         
         currentState = idleState;
     }

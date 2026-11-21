@@ -70,9 +70,9 @@ public class PlayerIdle : PlayerState
            player.SwitchState(player.crouchState);
            
         }
-        else if(current.IsKeyDown(Keys.Space) && previous.IsKeyUp(Keys.Space))
+        else if(current.IsKeyDown(Keys.Space) && previous.IsKeyUp(Keys.Space) && player.isOnGround)
         {
-            player.SwitchState(player.jumpState);
+            player.SwitchState(player.startJumpState);
         }
         else if(current.IsKeyDown(Keys.H) && previous.IsKeyUp(Keys.H))
         {
