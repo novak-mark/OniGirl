@@ -20,8 +20,18 @@ public class Game1 : Game
 
     private Texture2D _backgroundLayer;
 
+    private Texture2D _rectTexture;
+
+     private Texture2D _attackTexture;
+
     private int _screenWidth;
     private int _screenHeight;
+
+    private Rectangle _playerBounds;
+
+    private Rectangle _attackBounds;
+
+    private Projectile _fireball;
 
     
     private TextureAtlas playerAtlas;
@@ -35,6 +45,11 @@ public class Game1 : Game
     private TileMap _tileMap;
 
     private TileSet _tileSet;
+
+    private Vector2 _startPosition;
+
+
+    private CollisionController _collisionController;
 
     
 
@@ -77,11 +92,28 @@ public class Game1 : Game
         _tileMap = TileMap.ReadFromFile(Content,"Content/tilemap.xml");
         _tileMap.scale = new Vector2(3.0f,3.0f);
 
+
+        
+
         _oniGirl = new Player(playerAtlas,100,new Vector2(500,750));
+
+        _fireball = new Projectile(gameAtlas,new Vector2(1500,720));
+
+      
+
+        
+        _collisionController = new CollisionController();
 
         _playerportrait = playerAtlas.GetTextureRegion("portrait");
 
         _impIdle = gameAtlas.CreateAnimatedSprite("impidle");
+
+        //for debuging collision
+        _rectTexture = new Texture2D(GraphicsDevice, 1, 1);
+        _rectTexture.SetData(new Color[] { Color.Green });
+
+        _attackTexture = new Texture2D(GraphicsDevice, 1, 1);
+        _attackTexture.SetData(new Color[] { Color.Red });
 
         
 
@@ -93,14 +125,63 @@ public class Game1 : Game
             Exit();
 
        
+        Rectangle screenBounds = new Rectangle(
+            0,
+            0,
+            GraphicsDevice.PresentationParameters.BackBufferWidth,
+            GraphicsDevice.PresentationParameters.BackBufferHeight
+        );
+
+         _playerBounds = new Rectangle(
+            (int)(_oniGirl.position.X - (_oniGirl.width / 2f)),
+            (int)(_oniGirl.position.Y - (_oniGirl.height / 2f)),
+            (int)_oniGirl.width,
+            (int)_oniGirl.height
+        );
+
 
         _oniGirl.HandleInput();
+
+        if(_collisionController.ScreenBounds(screenBounds,_playerBounds))
+        {
+            _oniGirl.velocity.X *= -1;
+            if(_playerBounds.Left < screenBounds.Left)
+            {
+                _oniGirl.position.X = screenBounds.Left + (_oniGirl.width / 2f);
+            }
+            else
+            {
+                _oniGirl.position.X = screenBounds.Right - (_oniGirl.width / 2f);
+            }
+
+            _playerBounds = new Rectangle(
+            (int)(_oniGirl.position.X - (_oniGirl.width / 2f)),
+            (int)(_oniGirl.position.Y - (_oniGirl.height / 2f)),
+            (int)_oniGirl.width,
+            (int)_oniGirl.height
+            );
+            
+        }
+
+        _collisionController.DetectCollision(_playerBounds,_fireball);
 
         _oniGirl.Update(gameTime);
         _oniGirl.position.X += _oniGirl.velocity.X;
         _oniGirl.position.Y += _oniGirl.velocity.Y;
+
+       
+
+       
+
+
         
+
         _impIdle.Update(gameTime);
+
+        _fireball.Update(gameTime);
+
+
+       
         base.Update(gameTime);
     }
 
@@ -116,10 +197,30 @@ public class Game1 : Game
         _spriteBatch.Draw(_backgroundMiddleLayer,new Rectangle(0,0,_screenWidth,_screenHeight),Color.White);
         _spriteBatch.Draw(_backgroundFrontLayer, new Rectangle(0,0,_screenWidth,_screenHeight),Color.White);
 
+        if(_oniGirl.currentState is (PlayerAttack))
+        {
+            Console.WriteLine("ATTACK");
 
+            _spriteBatch.Draw
+            (
+                _attackTexture,
+                _attackBounds,
+                Color.White
+            );
+        }
         _tileMap.Draw(_spriteBatch);
 
+        
+         _spriteBatch.Draw
+        (
+            _rectTexture,
+            _playerBounds,
+            Color.White
+        );
+        
         _oniGirl.Draw(_spriteBatch);
+
+        
 
         _playerportrait.Draw
         (
@@ -139,7 +240,7 @@ public class Game1 : Game
             new Vector2(1500,700)
         );
 
-       
+        _fireball.Draw(_spriteBatch);
 
        
 

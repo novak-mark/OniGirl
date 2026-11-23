@@ -3,11 +3,11 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using System;
 
-public class PlayerAttack : PlayerState
+public class PlayerCrouch : PlayerState
 {
    
-    private AnimatedSprite _attackAnimation;
-    public override AnimatedSprite playerAnimation => _attackAnimation;
+    private AnimatedSprite _crouchAnimation;
+    public override AnimatedSprite playerAnimation => _crouchAnimation;
 
    
 
@@ -17,19 +17,24 @@ public class PlayerAttack : PlayerState
     public Vector2 Origin;
 
 
-    public PlayerAttack(Player player) : base(player)
+    public PlayerCrouch(Player player) : base(player)
     {
       
 
-        _attackAnimation  = player.playerAtlas.CreateAnimatedSprite("playerattack",false);
+        _crouchAnimation  = player.playerAtlas.CreateAnimatedSprite("playercrouch");
 
-        _attackAnimation.Scale = new Vector2(2.0f,2.0f);
+          _crouchAnimation.Origin = new Vector2(
+            _crouchAnimation.sourceRegion.textureWidth  / 2f,
+            _crouchAnimation.sourceRegion.textureHeight / 2f
+        );
+
+        _crouchAnimation.Scale = new Vector2(2.0f,2.0f);
 
              
     }
     public override void Enter()
     {
-        Console.WriteLine("Attack State");
+        Console.WriteLine("Crouch State");
         
     }
 
@@ -37,7 +42,7 @@ public class PlayerAttack : PlayerState
     {
         player.velocity = Vector2.Zero;
         
-        if(_attackAnimation.PlayOnce(gameTime))
+        if(_crouchAnimation.PlayOnce(gameTime))
         {
             player.SwitchState(player.idleState);
         }
@@ -60,19 +65,19 @@ public class PlayerAttack : PlayerState
     {
         if(player.direction == 1)
         {
-            _attackAnimation.Effects = SpriteEffects.FlipHorizontally;
+            _crouchAnimation.Effects = SpriteEffects.FlipHorizontally;
         }
         else
         {
-            _attackAnimation.Effects = SpriteEffects.None;
+            _crouchAnimation.Effects = SpriteEffects.None;
         }
-        _attackAnimation.Draw(batch,player.position);
+        _crouchAnimation.Draw(batch,player.position);
 
     }
 
     public override void Exit()
     {
-        Console.WriteLine("exiting attackState");
+        Console.WriteLine("exiting crouchState");
         
 
     }

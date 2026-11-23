@@ -21,10 +21,14 @@ public class PlayerJumpFall : PlayerState
     {
       
 
-        _jumpFallAnimation  = player.playerAtlas.CreateAnimatedSprite("playerjumpfall",false);
+        _jumpFallAnimation  = player.playerAtlas.CreateAnimatedSprite("playerjumpfall");
 
         _jumpFallAnimation.Scale = new Vector2(2.0f,2.0f);
 
+         _jumpFallAnimation.Origin = new Vector2(
+            _jumpFallAnimation.sourceRegion.textureWidth  / 2f,
+            _jumpFallAnimation.sourceRegion.textureHeight / 2f
+        );
              
     }
     public override void Enter()

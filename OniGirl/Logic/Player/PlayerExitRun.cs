@@ -31,7 +31,10 @@ public class PlayerExitRun : PlayerState
         _runStop = player.playerAtlas.CreateAnimatedSprite("playerrunexit");
         _runStop.Scale = new Vector2(2.0f,2.0f);
 
-
+        _runStop.Origin = new Vector2(
+            _runStop.sourceRegion.textureWidth  / 2f,
+            _runStop.sourceRegion.textureHeight / 2f
+        );
      
     }
     public override void Enter()

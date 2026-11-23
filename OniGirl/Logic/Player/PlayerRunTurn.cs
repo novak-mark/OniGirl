@@ -32,6 +32,11 @@ public class PlayerRunTurn : PlayerState
     
         _runTurn = player.playerAtlas.CreateAnimatedSprite("playerrunturn");
         _runTurn.Scale = new Vector2(2.0f,2.0f);
+
+         _runTurn.Origin = new Vector2(
+            _runTurn.sourceRegion.textureWidth  / 2f,
+            _runTurn.sourceRegion.textureHeight / 2f
+        );
     }
 
     public void SetNewDirection(int direction)

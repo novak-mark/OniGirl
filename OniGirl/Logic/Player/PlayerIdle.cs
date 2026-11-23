@@ -11,23 +11,16 @@ public class PlayerIdle : PlayerState
 
    
 
-
-    public float Rotation, Scale, Depth;
-
-    public Vector2 Origin;
-
-
     public PlayerIdle(Player player) : base(player)
     {
-        Rotation = 0;
 
-        Scale = 2;
-
-        Depth = 0;
-
-        Origin = Vector2.Zero;
 
         _idleAnimation  = player.playerAtlas.CreateAnimatedSprite("playeridle");
+
+        _idleAnimation.Origin = new Vector2(
+            _idleAnimation.sourceRegion.textureWidth  / 2f,
+            _idleAnimation.sourceRegion.textureHeight / 2f
+        );
 
         _idleAnimation.Scale = new Vector2(2.0f,2.0f);
 

@@ -3,11 +3,11 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using System;
 
-public class PlayerCrouch : PlayerState
+public class PlayerHeal : PlayerState
 {
    
-    private AnimatedSprite _crouchAnimation;
-    public override AnimatedSprite playerAnimation => _crouchAnimation;
+    private AnimatedSprite _healAnimation;
+    public override AnimatedSprite playerAnimation => _healAnimation;
 
    
 
@@ -17,19 +17,24 @@ public class PlayerCrouch : PlayerState
     public Vector2 Origin;
 
 
-    public PlayerCrouch(Player player) : base(player)
+    public PlayerHeal(Player player) : base(player)
     {
       
 
-        _crouchAnimation  = player.playerAtlas.CreateAnimatedSprite("playercrouch",false);
+        _healAnimation  = player.playerAtlas.CreateAnimatedSprite("playerheal");
 
-        _crouchAnimation.Scale = new Vector2(2.0f,2.0f);
+        _healAnimation.Scale = new Vector2(2.0f,2.0f);
+
+         _healAnimation.Origin = new Vector2(
+            _healAnimation.sourceRegion.textureWidth  / 2f,
+            _healAnimation.sourceRegion.textureHeight / 2f
+        );
 
              
     }
     public override void Enter()
     {
-        Console.WriteLine("Crouch State");
+        Console.WriteLine("heal State");
         
     }
 
@@ -37,7 +42,7 @@ public class PlayerCrouch : PlayerState
     {
         player.velocity = Vector2.Zero;
         
-        if(_crouchAnimation.PlayOnce(gameTime))
+        if(_healAnimation.PlayOnce(gameTime))
         {
             player.SwitchState(player.idleState);
         }
@@ -60,19 +65,19 @@ public class PlayerCrouch : PlayerState
     {
         if(player.direction == 1)
         {
-            _crouchAnimation.Effects = SpriteEffects.FlipHorizontally;
+            _healAnimation.Effects = SpriteEffects.FlipHorizontally;
         }
         else
         {
-            _crouchAnimation.Effects = SpriteEffects.None;
+            _healAnimation.Effects = SpriteEffects.None;
         }
-        _crouchAnimation.Draw(batch,player.position);
+        _healAnimation.Draw(batch,player.position);
 
     }
 
     public override void Exit()
     {
-        Console.WriteLine("exiting crouchState");
+        Console.WriteLine("exiting healState");
         
 
     }

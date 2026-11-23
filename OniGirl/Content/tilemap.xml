@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Tilemap>
     <Tileset tileWidth="32" tileHeight="32">Sprites/gameAtlas</Tileset>
-    <Region x="1344" y="768"   width="544"  height="288"/>
+    <Region x="0" y="0"   width="544"  height="288"/>
     <Tiles>
           1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
 

@@ -21,9 +21,14 @@ public class PlayerJumpStart : PlayerState
     {
       
 
-        _startJumpAnimation  = player.playerAtlas.CreateAnimatedSprite("playerjumpstart",false);
+        _startJumpAnimation  = player.playerAtlas.CreateAnimatedSprite("playerjumpstart");
 
         _startJumpAnimation.Scale = new Vector2(2.0f,2.0f);
+
+         _startJumpAnimation.Origin = new Vector2(
+            _startJumpAnimation.sourceRegion.textureWidth  / 2f,
+            _startJumpAnimation.sourceRegion.textureHeight / 2f
+        );
 
              
     }

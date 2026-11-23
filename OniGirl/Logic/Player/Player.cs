@@ -27,6 +27,10 @@ public class Player
 
     public int direction;
 
+    public int width;
+
+    public int height;
+
     public PlayerState currentState;
     
     public PlayerIdle idleState;
@@ -53,6 +57,8 @@ public class Player
 
     public SpriteEffects playerEffect;
 
+    
+
     public Player(TextureAtlas playerAtlas,int HP, Vector2 startPosition)
     {
         this.playerAtlas = playerAtlas;
@@ -60,6 +66,9 @@ public class Player
         this.position = startPosition;
 
         this.groundY = startPosition.Y;
+
+        this.width = 64;
+        this.height = 64;
 
 
         currentHP = _maxHP;
@@ -81,6 +90,8 @@ public class Player
         exitJumpState = new PlayerJumpExit(this);
         
         currentState = idleState;
+
+        
     }
 
     public void SwitchState(PlayerState newState)
@@ -104,6 +115,8 @@ public class Player
     public void Update(GameTime gameTime)
     {
         currentState.Update(gameTime);
+
+       
     }
 
     public void Draw(SpriteBatch batch)

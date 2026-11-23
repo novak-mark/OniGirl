@@ -31,6 +31,11 @@ public class PlayerRun : PlayerState
 
         
         _runAnimation.Scale = new Vector2(2.0f,2.0f);
+
+         _runAnimation.Origin = new Vector2(
+            _runAnimation.sourceRegion.textureWidth  / 2f,
+            _runAnimation.sourceRegion.textureHeight / 2f
+        );
      
 
 

@@ -27,6 +27,11 @@ public class PlayerWalk : PlayerState
 
         _walkAnimation.Scale = new Vector2(2.0f,2.0f);
 
+         _walkAnimation.Origin = new Vector2(
+            _walkAnimation.sourceRegion.textureWidth  / 2f,
+            _walkAnimation.sourceRegion.textureHeight / 2f
+        );
+
 
      
     }

@@ -21,9 +21,14 @@ public class PlayerJumpExit : PlayerState
     {
       
 
-        _exitJumpAnimation  = player.playerAtlas.CreateAnimatedSprite("playerjumpexit",false);
+        _exitJumpAnimation  = player.playerAtlas.CreateAnimatedSprite("playerjumpexit");
 
         _exitJumpAnimation.Scale = new Vector2(2.0f,2.0f);
+
+        _exitJumpAnimation.Origin = new Vector2(
+            _exitJumpAnimation.sourceRegion.textureWidth  / 2f,
+            _exitJumpAnimation.sourceRegion.textureHeight / 2f
+        );
 
              
     }
