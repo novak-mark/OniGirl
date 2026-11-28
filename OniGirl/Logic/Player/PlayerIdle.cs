@@ -71,6 +71,7 @@ public class PlayerIdle : PlayerState
         {
             player.SwitchState(player.healState);
         }
+     
     }
 
     public override void Draw(SpriteBatch batch,SpriteEffects effects)

@@ -38,4 +38,14 @@ public class CollisionController
 
         return false;
     }
+
+    public bool DetectAttackCollision(Rectangle attackBounds, Object obj)
+    {
+        if(obj is Enemy)
+        {
+            return false;
+        }
+        return false;
+    }
+
 }

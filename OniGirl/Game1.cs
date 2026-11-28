@@ -10,7 +10,7 @@ public class Game1 : Game
     private GraphicsDeviceManager _graphics;
     private SpriteBatch _spriteBatch;
 
-    private AnimatedSprite _impIdle;
+    private Imp _imp;
 
     private Texture2D _backgroundFrontLayer;
 
@@ -106,7 +106,9 @@ public class Game1 : Game
 
         _playerportrait = playerAtlas.GetTextureRegion("portrait");
 
-        _impIdle = gameAtlas.CreateAnimatedSprite("impidle");
+        
+
+        _imp = new Imp(gameAtlas, new Vector2(1500,700),10);
 
         //for debuging collision
         _rectTexture = new Texture2D(GraphicsDevice, 1, 1);
@@ -139,6 +141,15 @@ public class Game1 : Game
             (int)_oniGirl.height
         );
 
+         _attackBounds = new Rectangle(
+            (int)(_oniGirl.position.X - (_oniGirl.width / 2f) + 125),
+            (int)(_oniGirl.position.Y - (_oniGirl.height / 2f)),
+            (int)_oniGirl.width,
+            (int)_oniGirl.height
+        );
+
+
+
 
         _oniGirl.HandleInput();
 
@@ -163,7 +174,13 @@ public class Game1 : Game
             
         }
 
-        _collisionController.DetectCollision(_playerBounds,_fireball);
+        if(_collisionController.DetectCollision(_playerBounds,_fireball))
+        {
+            _fireball = null;
+            _oniGirl.SwitchState(_oniGirl.hitState);
+        }
+
+            
 
         _oniGirl.Update(gameTime);
         _oniGirl.position.X += _oniGirl.velocity.X;
@@ -176,9 +193,12 @@ public class Game1 : Game
 
         
 
-        _impIdle.Update(gameTime);
+        _imp.Update(gameTime);
 
-        _fireball.Update(gameTime);
+        if(_fireball != null)
+        {
+            _fireball.Update(gameTime);
+        }
 
 
        
@@ -197,17 +217,15 @@ public class Game1 : Game
         _spriteBatch.Draw(_backgroundMiddleLayer,new Rectangle(0,0,_screenWidth,_screenHeight),Color.White);
         _spriteBatch.Draw(_backgroundFrontLayer, new Rectangle(0,0,_screenWidth,_screenHeight),Color.White);
 
-        if(_oniGirl.currentState is (PlayerAttack))
-        {
-            Console.WriteLine("ATTACK");
 
-            _spriteBatch.Draw
+
+        _spriteBatch.Draw
             (
                 _attackTexture,
                 _attackBounds,
                 Color.White
             );
-        }
+        
         _tileMap.Draw(_spriteBatch);
 
         
@@ -234,13 +252,16 @@ public class Game1 : Game
             0.0f    
         );
 
-        _impIdle.Draw
-        (
-            _spriteBatch,
-            new Vector2(1500,700)
-        );
+    
 
-        _fireball.Draw(_spriteBatch);
+        _imp.Draw(_spriteBatch);
+
+        if(_fireball != null)
+        {
+            _fireball.Draw(_spriteBatch);                
+        }
+
+        
 
        
 

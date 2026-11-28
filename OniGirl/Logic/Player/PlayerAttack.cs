@@ -59,11 +59,7 @@ public class PlayerAttack : PlayerState
     public override void HandleInput(KeyboardState current, KeyboardState previous, MouseState mouse)
     {
      
-        if (current.IsKeyDown(Keys.C) && previous.IsKeyUp(Keys.C))
-        {
-           //player.SwitchState(player.crouchState);
-           
-        }
+      
     }
 
     public override void Draw(SpriteBatch batch,SpriteEffects effects)

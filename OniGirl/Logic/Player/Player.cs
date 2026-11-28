@@ -51,6 +51,8 @@ public class Player
     public PlayerJumpFall  fallJumpState;
     public PlayerJumpExit exitJumpState;
     public PlayerHeal healState;
+
+    public PlayerHit hitState;
     public Vector2 position;
 
     public Vector2 playerOrigin;
@@ -88,6 +90,7 @@ public class Player
         startJumpState = new PlayerJumpStart(this);
         fallJumpState = new PlayerJumpFall(this);
         exitJumpState = new PlayerJumpExit(this);
+        hitState = new PlayerHit(this);
         
         currentState = idleState;
 

@@ -162,6 +162,34 @@
         <Region name="playerjumpexit-22" x="576" y="400" width="64" height="80"/>
         <Region name="playerjumpexit-23" x="640" y="400" width="64" height="80"/>
         <Region name="playerjumpexit-24" x="704" y="400" width="64" height="80"/>
+
+        <Region name="playerhit-1" x="844" y="288" width="70" height="56"/>
+        <Region name="playerhit-2" x="914" y="288" width="70" height="56"/>
+        <Region name="playerhit-3" x="984" y="288" width="70" height="56"/>
+        <Region name="playerhit-4" x="1054" y="288" width="70" height="56"/>
+
+        <Region name="playerhit-5" x="850" y="344" width="64" height= "64"/>
+        <Region name="playerhit-6" x="914" y="344" width="64" height="64"/>
+        <Region name="playerhit-7" x="993" y="344" width="64" height="64"/>
+        <Region name="playerhit-8" x="1057" y="344" width="64" height= "64"/>
+
+        <Region name="playerhit-9"  x="865"  y="408" width="64" height= "64"/>
+        <Region name="playerhit-10" x="929"  y="408" width="64" height= "64"/>
+        <Region name="playerhit-11" x="993"  y="408" width="64" height= "64"/>
+        <Region name="playerhit-12" x="1054" y="408" width="64" height= "64"/>
+
+        <Region name="playerhit-13" x="865" y="472" width="64" height= "64"/>
+        <Region name="playerhit-14" x="929" y="472" width="64" height= "64"/>
+        <Region name="playerhit-15" x="993" y="472" width="64" height= "64"/>
+        <Region name="playerhit-16" x="1061" y="472" width="64" height= "64"/>
+        
+        <Region name="playerhit-17" x="865" y="532" width="64" height= "64"/>
+        <Region name="playerhit-18" x="929" y="532" width="64" height= "64"/>
+        <Region name="playerhit-19" x="993" y="532" width="64" height= "64"/>
+        <Region name="playerhit-20" x="1065" y="532" width="64" height= "64"/>
+
+        <Region name="playerhit-21" x="855" y="596" width="64" height= "64"/>
+        <Region name="playerhit-22" x="919" y="596" width="64" height= "64"/>
         
 
         <Region name="portrait"      x="1664" y="672" width="256" height="410" />
@@ -327,7 +355,6 @@
             <Frame region="playerjumpstart-16"/>
         </Animation>
         <Animation name="playerjumpfall" delay="70">
-          
             <Frame region="playerjumpfall-17"/>
             <Frame region="playerjumpfall-18"/>
             <Frame region="playerjumpfall-19"/>
@@ -338,6 +365,30 @@
             <Frame region="playerjumpexit-22"/>
             <Frame region="playerjumpexit-23"/>
             <Frame region="playerjumpexit-24"/>
+        </Animation>
+        <Animation name="playerhit" delay="90">
+            <Frame region="playerhit-1"/>
+            <Frame region="playerhit-2"/>
+            <Frame region="playerhit-3"/>
+            <Frame region="playerhit-4"/>
+            <Frame region="playerhit-5"/>
+            <Frame region="playerhit-6"/>
+            <Frame region="playerhit-7"/>
+            <Frame region="playerhit-8"/>
+            <Frame region="playerhit-9"/>
+            <Frame region="playerhit-10"/>
+            <Frame region="playerhit-11"/>
+            <Frame region="playerhit-12"/>
+            <Frame region="playerhit-13"/>
+            <Frame region="playerhit-14"/>
+            <Frame region="playerhit-15"/>
+            <Frame region="playerhit-16"/>
+            <Frame region="playerhit-17"/>
+            <Frame region="playerhit-18"/>
+            <Frame region="playerhit-19"/>
+            <Frame region="playerhit-20"/>
+            <Frame region="playerhit-21"/>
+            <Frame region="playerhit-22"/>
         </Animation>
     </Animations>
 </TextureAtlas>
