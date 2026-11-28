@@ -6,8 +6,8 @@ using System;
 public class ImpIdle : EnemyState
 {
    
-    private AnimatedSprite _idleAnimation;
-    public override AnimatedSprite enemyAnimation => _idleAnimation;
+    private AnimatedSprite _hitAnimation;
+    public override AnimatedSprite enemyAnimation => _hitAnimation;
 
    
 
@@ -15,14 +15,14 @@ public class ImpIdle : EnemyState
     {
 
 
-        _idleAnimation  = enemy.gameAtlas.CreateAnimatedSprite("impidle");
+        _hitAnimation  = enemy.gameAtlas.CreateAnimatedSprite("impidle");
 
-        _idleAnimation.Origin = new Vector2(
-            _idleAnimation.sourceRegion.textureWidth  / 2f,
-            _idleAnimation.sourceRegion.textureHeight / 2f
+        _hitAnimation.Origin = new Vector2(
+            _hitAnimation.sourceRegion.textureWidth  / 2f,
+            _hitAnimation.sourceRegion.textureHeight / 2f
         );
 
-        _idleAnimation.Scale = new Vector2(2.0f,2.0f);
+        _hitAnimation.Scale = new Vector2(2.0f,2.0f);
 
              
     }
@@ -38,7 +38,7 @@ public class ImpIdle : EnemyState
         enemy.velocity.Y = 0;
 
         
-        _idleAnimation.Update(gameTime);
+        _hitAnimation.Update(gameTime);
         
     }
 
@@ -48,13 +48,13 @@ public class ImpIdle : EnemyState
     {
         if(enemy.direction == 1)
         {
-            _idleAnimation.Effects = SpriteEffects.FlipHorizontally;
+            _hitAnimation.Effects = SpriteEffects.FlipHorizontally;
         }
         else
         {
-            _idleAnimation.Effects = SpriteEffects.None;
+            _hitAnimation.Effects = SpriteEffects.None;
         }
-        _idleAnimation.Draw(batch,enemy.position);
+        _hitAnimation.Draw(batch,enemy.position);
 
     }
 
